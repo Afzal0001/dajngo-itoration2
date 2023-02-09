@@ -1,0 +1,16 @@
+{% if article %}
+   <div class="title">Вы не можете удалить или изменить данный пост, так как вы не являетесь
+       автором
+       этого поста
+   </div>
+   <a href="{% url 'articles:home' %}" class="button is-success is-fullwidth">
+       Вернутся на главную
+   </a>
+{% else %}
+   <div class="title is-4">Вы не можете удалить или изменить данный комментарий, так как вы не являетесь
+       автором этого комментария
+   </div>
+   <a href="{% url 'articles:article_detail' comment.article.slug %}" class="button is-success is-fullwidth">
+       Вернутся на страницу поста
+   </a>
+{% endif %}
